@@ -4,6 +4,7 @@ vendor/
 
 # Local configs
 config/autoload/*.local.php
+class/Model.php
 
 # Binary gettext files
 *.mo
