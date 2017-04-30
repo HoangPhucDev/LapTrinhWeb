@@ -8,7 +8,8 @@
     <meta name="author" content="">
 
     <title>Quản trị - 3PH Store</title>
-     <link href="../css/site2.css" rel="stylesheet">
+    <link href="../../dist/css/site2.css" rel="stylesheet">
 
+	<link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 </head>
 <body>

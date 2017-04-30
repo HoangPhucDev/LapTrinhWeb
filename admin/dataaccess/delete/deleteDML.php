@@ -20,8 +20,8 @@
                      <input type="hidden" name="textAction" id="textAction" value="">
                      <span id="labelmessageForm" class="labelmessageForm"></span>
                      <div class="pnlUpdateAction">
-                        <input type="submit" name="submit" value="Lưu" > | 
-                         <a href="../../danhmuclon.php"><input type="submit" name="submit1" value="Trở Về"></a> 
+                       <input type="submit" class="btn btn-default"  name="submit" value="Lưu" > | 
+						<a href="../../danhmuclon.php" class="btn btn-default"><i class="fa fa-chevron-left"></i>Trở Về</a>
                         <input style="display: none" type="submit" id="btnUpdateAction">
                      </div>   
                      <br>
