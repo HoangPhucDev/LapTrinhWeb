@@ -74,3 +74,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+#file zend
+*.project
+*.buildpath
+.settings/
