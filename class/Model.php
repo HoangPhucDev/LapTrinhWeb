@@ -9,7 +9,7 @@ class Model {
         // Nếu chưa kết nối thì thực hiện kết nối
         if (!$this->__conn){
             // Kết nối
-            $this->__conn = mysqli_connect('localhost', 'root', '', 'doan') or die ('Lỗi kết nối');
+            $this->__conn = mysqli_connect('localhost', 'root', 'dasdw', 'doan') or die ('Lỗi kết nối');
     
             // Xử lý truy vấn UTF8 để tránh lỗi font
             mysqli_query($this->__conn, "SET NAMES 'utf8'");
