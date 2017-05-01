@@ -79,8 +79,15 @@
                                  <span class="update-header-td">User</span>
                            </td>
                               <td class="update-td">
-                                 <input style="width:300px" value="" name="user" type="text" maxlength="255" id="txtname">
-                               </td>
+                                  <select name="user" style="width: 304px;">
+                                  <?php 
+                                         $user = $data->get_list("SELECT * FROM `customer`");
+                                             foreach ($user as $arrUser){
+                                                 echo '<option value="'.$arrUser['id'].'">'.$arrUser['fullname'].'</option>';
+                                             }
+                                  ?>
+                                  </select>
+                                </td>
                                </tr>
                         </tbody></table>
                   </form>

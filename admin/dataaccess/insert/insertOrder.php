@@ -121,11 +121,18 @@
                                </tr>
                                <tr>
                            <td class="update-td" style="width:150px;">
-                                 <span class="update-header-td">Khách Hàng ID</span>
+                                 <span class="update-header-td">Khách Hàng</span>
                            </td>
                               <td class="update-td">
-                                 <input style="width:300px" value="" name="id" type="text" maxlength="255" id="txtname">
-                               </td>
+                                  <select name="khachhang" style="width: 304px;">
+                                  <?php 
+                                         $khachhang = $data->get_list("SELECT * FROM `guest`");
+                                             foreach ($khachhang as $arrKH ){
+                                                 echo '<option value="'.$arrKH['id'].'">'.$arrKH['fullname'].'</option>';
+                                             }
+                                  ?>
+                                  </select>
+                                </td>
                                </tr>
                         </tbody></table>
                   </form>
