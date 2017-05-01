@@ -20,7 +20,7 @@ include_once '../class/Model.php';
                    }
               }
               ?>
-<p>fwafawfw</p>
+<p>đã bỏ</p>
                 <div class="container">
                     <div class="product-slider">
                              <!-- *** Load Sáº£n Pháº©m Trong Danh Má»¥c *** -->   
