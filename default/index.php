@@ -20,10 +20,10 @@ include_once '../class/Model.php';
                    }
               }
               ?>
-
+<p>fwafawfw</p>
                 <div class="container">
                     <div class="product-slider">
-                             <!-- *** Load Sản Phẩm Trong Danh Mục *** -->   
+                             <!-- *** Load Sáº£n Pháº©m Trong Danh Má»¥c *** -->   
                     <?php
     
                     $query2 = $data->get_list("SELECT * FROM `products` INNER JOIN `category_detail` ON products.category = category_detail.id  WHERE `category_id` =".$value["id"]." LIMIT 0,10");
@@ -51,7 +51,7 @@ include_once '../class/Model.php';
                                 </a>
                                 <div class="text">
                                     <h3><a href="detail.php?id='.$value1["id"].'">'.$value1["name"].'</a></h3>
-                                    <p class="price">'.number_format($value1['price']).' VNĐ</p>
+                                    <p class="price">'.number_format($value1['price']).' VNÄ�</p>
                                 </div>
                                 <!-- /.text -->
                             </div>
