@@ -12,8 +12,6 @@
               }else {
                  echo "Thêm Thất Bại";
               }
-          }else{
-              echo "Các Ô Bên Dưới Không Được Rỗng và Danh Mục Lớn Phải Là Số";
           }
 ?>
 <?php include_once '../general/header.php';?>
@@ -38,13 +36,20 @@
                                  <input style="width:300px" value="" name="danhmuccon" type="text" maxlength="255" id="txtname">
                                </td>
                                </tr>
-                                <tr>
+                               <tr>
                            <td class="update-td" style="width:150px;">
                                  <span class="update-header-td">Danh Mục Lớn</span>
                            </td>
                               <td class="update-td">
-                                 <input style="width:300px" value="" name="danhmuc" type="text" maxlength="255" id="txtname">
-                               </td>
+                                  <select name="danhmuc" style="width: 304px;">
+                                  <?php 
+                                         $DML = $data->get_list("SELECT * FROM `category`");
+                                             foreach ($DML as $arrDML){
+                                                 echo '<option value="'.$arrDML['id'].'">'.$arrDML['name'].'</option>';
+                                             }
+                                  ?>
+                                  </select>
+                                </td>
                                </tr>
                         </tbody></table>
                   </form>
