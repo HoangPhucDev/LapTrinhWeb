@@ -4,34 +4,22 @@
 ?>
 <?php include_once 'general/header.php';?>
 <?php 
-$fullname = "Khách Hàng";
-$phone = "";
-$email = "";
-$address = "";
 
-		if (isset($_POST['fullname'])){
-            $fullname = $_POST['fullname'];}else{$fullname = "Khách Hàng"; }
-            
-        if (isset($_POST['phone'])){
-            $phone = $_POST['phone'];}else{$phone = ""; }
-            
-        if (isset($_POST['address'])){
-            $address = $_POST['address'];}else{$address = ""; }
-			
-		if (isset($_POST['email'])){
-            $email = $_POST['email'];}else{$email = "";}
-			
-		if (isset($_POST['shipping_fullname']) and $_POST['shipping_fullname']!=null){
-            $shipping_fullname = $_POST['shipping_fullname'];}else{$shipping_fullname = $fullname; }
-            
-        if (isset($_POST['shipping_phone']) and $_POST['shipping_phone']!=null){
-            $shipping_phone = $_POST['shipping_phone'];}else{$shipping_phone = $phone; }
-            
-        if (isset($_POST['shipping_address']) and $_POST['shipping_address']!=null){
-            $shipping_address = $_POST['shipping_address'];}else{$shipping_address = $address; }
-		
-		if (isset($_POST['shipping_email']) and $_POST['shipping_email']!=null){
-            $shipping_email = $_POST['shipping_email'];}else{$shipping_email = $email;}	
+        $fullname = isset($_POST['fullname'])?$_POST['fullname']:"Khách Hàng";
+        $state = $_POST['state'];
+        $address = isset($_POST['address'])?$_POST['address']:'';
+        $email = isset($_POST['email'])?$_POST['email']:'';
+        $phone = isset($_POST['phone'])?$_POST['phone']:'';
+        $shipping_fullname = (isset($_POST['shipping_fullname'])
+                                && $_POST['shipping_fullname']!='')?$_POST['shipping_fullname']:$fullname;
+        $shipping_state = $_POST['shipping_state'];
+        $shipping_address = (isset($_POST['shipping_address'])
+                            && $_POST['shipping_address']!='')?$_POST['shipping_address']:$address;
+        $shipping_phone = (isset($_POST['shipping_phone'])
+                            && $_POST['shipping_phone']!='')?$_POST['shipping_phone']:$phone;
+        $shipping_email = (isset($_POST['shipping_email'])
+                            && $_POST['shipping_email']!='')?$_POST['shipping_email']:$email;     
+
 ?>
 
     
@@ -187,11 +175,11 @@ $address = "";
                                     </tr>
                                     <tr>
                                         <td>Phí Vận Chuyển</td>
-                                        <th>10,000 VNĐ</th>
+                                        <th><?php echo number_format($state*10000) ?> VNĐ</th>
                                     </tr>
                                     <tr class="total">
                                         <td>Tổng</td>
-                                        <th><?php echo number_format($tongtien + 10000)?> VNĐ</th>
+                                        <th><?php echo number_format($tongtien + $state*10000)?> VNĐ</th>
                                     </tr>
                                 </tbody>
                             </table>

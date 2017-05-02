@@ -1,5 +1,6 @@
 <?php 
    include_once '../class/Model.php';
+   include_once './Province.php';
    $data = new Model();
 ?>
 <?php include_once 'general/header.php';?>
@@ -87,23 +88,25 @@ $tongtien1 = $tongtien1 + ($row1['price'] * $_SESSION['giohang'][$i]['soluong'])
                                     <div class="col-sm-6 col-md-4">
                                         <div class="form-group">
                                             <label for="state">Tỉnh</label>
-                                            <select class="form-control" id="state"></select>
+                                            <select class="form-control" id="state" name="state">
+                                                <?php foreach ($ListProvince as $key => $value): ?>
+                                                   <option value="<?php echo $value; ?>"><?php echo $key; ?></option>
+                                                <?php endforeach ?>
+                                            </select>
                                         </div>
                                     </div>
                                     
                                      <div class="col-sm-8">
                                         <div class="form-group">
                                             <label for="address">Địa Chỉ</label>
-                                            <textarea class="form-control" id="address" name="address" >
-											<?php echo $address; ?>
-                                            </textarea>
+                                            <textarea class="form-control" id="address" name="address" ><?php echo $address; ?></textarea>
                                         </div>
                                     </div>  
                                 </div>
                                 <!-- /.row -->
                                 
                                 <div class="panel panel-default">
-                                  <div class="panel-heading"><input type="checkbox" name="CheckBoxShipping">
+                                  <div class="panel-heading"><input type="checkbox" id="CheckBoxShipping">
                                    Thông tin Giao hàng Khác
                                    </div>
                                   <div id="anhien" class="panel-body">
@@ -112,24 +115,21 @@ $tongtien1 = $tongtien1 + ($row1['price'] * $_SESSION['giohang'][$i]['soluong'])
                                     <div class="col-sm-4">
                                         <div class="form-group">
                                             <label for="firstname">Tên</label>
-                                            <input type="text" class="form-control" id="firstname" name="shipping_fullname"
-                                             value="<?php echo $fullname; ?>">
+                                            <input type="text" class="form-control" id="firstname" name="shipping_fullname">
                                         </div>
                                     </div>
                                     
                                     <div class="col-sm-3">
                                         <div class="form-group">
                                             <label for="phone">Số Điện Thoại</label>
-                                            <input type="text" class="form-control" id="phone" name="shipping_phone"
-                                             value="<?php echo $phone; ?>">
+                                            <input type="text" class="form-control" id="phone" name="shipping_phone">
                                         </div>
                                     </div>
                                     
                                     <div class="col-sm-5">
                                         <div class="form-group">
                                             <label for="email">Email</label>
-                                            <input type="text" class="form-control" id="email" name="shipping_email"
-                                             value="<?php echo $email; ?>">
+                                            <input type="text" class="form-control" id="email" name="shipping_email">
                                         </div>
                                     </div>
                                     
@@ -142,16 +142,18 @@ $tongtien1 = $tongtien1 + ($row1['price'] * $_SESSION['giohang'][$i]['soluong'])
                                     <div class="col-sm-6 col-md-4">
                                         <div class="form-group">
                                             <label for="state">Tỉnh</label>
-                                            <select class="form-control" id="state"></select>
+                                            <select class="form-control" id="state" name="shipping_state">
+                                                <?php foreach ($ListProvince as $key => $value): ?>
+                                                   <option value="<?php echo $value; ?>"><?php echo $key; ?></option>
+                                                <?php endforeach ?>
+                                            </select>
                                         </div>
                                     </div>
                                     
                                      <div class="col-sm-8">
                                         <div class="form-group">
                                             <label for="address">Địa Chỉ</label>
-                                            <textarea class="form-control" id="address" name="shipping_address" >
-											<?php echo $address; ?>
-                                            </textarea>
+                                            <textarea class="form-control" id="address" name="shipping_address" ></textarea>
                                         </div>
                                     </div>  
                                 </div>
@@ -195,11 +197,11 @@ $tongtien1 = $tongtien1 + ($row1['price'] * $_SESSION['giohang'][$i]['soluong'])
                                     </tr>
                                     <tr>
                                         <td>Phí Vận Chuyển</td>
-                                        <th>10,000 VNĐ</th>
+                                        <th>0,000 VNĐ</th>
                                     </tr>
                                     <tr class="total">
                                         <td>Tổng</td>
-                                        <th><?php echo number_format($tongtien + 10000)?> VNĐ</th>
+                                        <th><?php echo number_format($tongtien)?> VNĐ</th>
                                     </tr>
                                 </tbody>
                             </table>
@@ -226,7 +228,17 @@ $tongtien1 = $tongtien1 + ($row1['price'] * $_SESSION['giohang'][$i]['soluong'])
  _________________________________________________________ -->
        <?php include_once 'general/footer.php';?>
         <?php include_once 'general/script.php';?>
-   
+   <script type="text/javascript">
+$(document).ready(function(){
+ 
+        $("#anhien").hide();
+        $('#CheckBoxShipping').click(function(){
+ $("#anhien").slideToggle();
+});
+ 
+});
+ 
+</script>
 
 
 </body>

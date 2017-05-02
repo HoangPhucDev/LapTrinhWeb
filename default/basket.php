@@ -119,11 +119,11 @@
                                     </tr>
                                     <tr>
                                         <td>Phí Vận Chuyển</td>
-                                        <th>10,000 VNĐ</th>
+                                        <th>0,000 VNĐ</th>
                                     </tr>
                                     <tr class="total">
                                         <td>Tổng</td>
-                                        <th><?php echo number_format($tongtien + 10000)?> VNĐ</th>
+                                        <th><?php echo number_format($tongtien)?> VNĐ</th>
                                     </tr>
                                 </tbody>
                             </table>
