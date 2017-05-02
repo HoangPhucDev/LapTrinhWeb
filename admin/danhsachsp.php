@@ -43,7 +43,7 @@
                            </div>
                            <div id="pnlActionLeft" class="pnlActionLeft">
 
-                              <a id="lbnAddNew" title="Add new" href="#" class="addnew-btn-action">Add new</a>&nbsp;&nbsp;|
+                              <a id="lbnAddNew" title="Add new" href="./dataaccess/insert/insertSP.php" class="addnew-btn-action">Add new</a>&nbsp;&nbsp;|
                               <a id="lbnDelete" title="Delete" href="#" class="delete-btn-action">Delete</a>&nbsp;&nbsp;|
                               <a id="lbnRefresh" title="Refresh" href="#" class="refresh-btn-action">Refresh</a>
                               <input type="hidden" name="isDeleteMultiple" id="isDeleteMultiple" value="">
@@ -89,7 +89,7 @@
                                                 <td><span class="table-row-primary">'.$row['id'].'</span></td>
                                                 <td>'.$row['name'].'</td>
                                                 <td>'.$row['saleoff'].'</td>
-                                                <td><img width="60" height="90" alt="" src="./img/'.$row['image'].'">  </td>
+                                                <td><img width="60" height="90" alt="" src="../default/img/'.$row['image'].'">  </td>
                                                 <td>'.$row['price'].'</td>
                                                 <td>'.$row['size'].'</td>
                                                 <td>'.$row['avaibility'].'</td>

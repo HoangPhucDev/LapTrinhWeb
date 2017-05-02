@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,20 +13,20 @@
     <title>Quản trị - 3PH Store</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="./vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="../../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="./dist/css/sb-admin-2.css" rel="stylesheet">
-     <link href="./dist/css/site2.css" rel="stylesheet">
+    <link href="../../dist/css/sb-admin-2.css" rel="stylesheet">
+     <link href="../../dist/css/site2.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="./vendor/morrisjs/morris.css" rel="stylesheet">
+    <link href="../../vendor/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="./vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -42,7 +43,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../default/index.php">View Page</a>
+                <a class="navbar-brand" href="../../index.php">View Page</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -61,19 +62,19 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="../../index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-table fa-fw"></i> Hàng Hóa<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="index.php?page=danhmuclon">Danh Mục Lớn</a>
+                                    <a href="../../index.php?page=danhmuclon">Danh Mục Lớn</a>
                                 </li>
                                 <li>
-                                    <a href="index.php?page=danhmuccon">Danh Mục Con</a>
+                                    <a href="../../index.php?page=danhmuccon">Danh Mục Con</a>
                                 </li>
                                 <li>
-                                    <a href="index.php?page=sanpham">Danh Sách Sản Phẩm</a>
+                                    <a href="../../index.php?page=sanpham">Danh Sách Sản Phẩm</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -82,13 +83,13 @@
                             <a href="#"><i class="fa fa-table fa-fw"></i> Hóa Đơn<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="index.php?page=khachhang">Danh sách Khách Hàng</a>
+                                    <a href="../../index.php?page=khachhang">Danh sách Khách Hàng</a>
                                 </li>
                                 <li>
-                                    <a href="index.php?page=chitiethoadon">Danh sách Chi Tiết Hóa Đơn</a>
+                                    <a href="../../index.php?page=chitiethoadon">Danh sách Chi Tiết Hóa Đơn</a>
                                 </li>
                                 <li>
-                                    <a href="index.php?page=dathang">Đặt Hàng</a>
+                                    <a href="../../index.php?page=dathang">Đặt Hàng</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -97,7 +98,7 @@
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Người dùng<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="index.php?page=user">User</a>
+                                    <a href="../../index.php?page=user">User</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -106,7 +107,7 @@
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Tài Khoản<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="login.php">Logout Page</a>
+                                    <a href="../../login.php">Logout Page</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
