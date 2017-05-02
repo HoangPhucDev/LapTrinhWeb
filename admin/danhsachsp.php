@@ -96,8 +96,8 @@
                                                 <td>'.$row['color'].'</td>
                                                 <td>'.$row['description'].'</td>
                                                 <td>'.$row['category_name'].'</td>
-                                                <td><a href="./dataaccess/update/updateDML.php?id='.$row['id'].'">Edit</a> |
-                                                    <a href="./dataaccess/delete/deleteDML.php?id='.$row['id'].'">Delete</a>
+                                                <td><a href="./dataaccess/update/updateSP.php?id='.$row['id'].'">Edit</a> |
+                                                    <a href="./dataaccess/delete/deleteSP.php?id='.$row['id'].'">Delete</a>
                                                 </td>
                                                   </tr>';
                                         }
