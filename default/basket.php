@@ -1,6 +1,26 @@
 <?php 
   include_once '../class/Model.php';
   $data = new Model();
+  session_start();
+  if(isset($_SESSION['giohang'])){
+      if(isset($_GET['xoagiohang'])){
+          $id = $_GET['xoagiohang'];
+          for ($i = 0;$i < count($_SESSION['giohang']);$i++){
+              if($_SESSION['giohang'][$i]['id'] == $id){
+                  $_SESSION['giohang'][$i]['soluong'] = $_SESSION['giohang'][$i]['soluong'] - 1;
+              }
+          }
+      }
+      if(isset($_GET['conggiohang'])){
+        $id = $_GET['conggiohang'];
+        for ($i = 0;$i < count($_SESSION['giohang']);$i++){
+            if($_SESSION['giohang'][$i]['id'] == $id){
+                $_SESSION['giohang'][$i]['soluong'] = $_SESSION['giohang'][$i]['soluong'] + 1;
+            }
+        }
+      }
+  }
+  
 ?>
 <?php include_once 'general/header.php';?>
         <div id="all">
@@ -61,12 +81,14 @@
                                             <td><a href="detail.php?id=<?php echo $row1["id"]?>"><?php echo $row1['name'];?></a>
                                             </td>
                                             <td>
-                                                <input type="number" value="<?php echo $_SESSION['giohang'][$i]['soluong'];?>" class="form-control">
+                                                <input type="text" value="<?php echo $_SESSION['giohang'][$i]['soluong'];?>" class="form-control">
                                             </td>
                                             <td><?php echo number_format($row1['price']);?> VNĐ</td>
                                             <td style="text-align: center"><?php echo $row1['saleoff']?> %</td>
                                             <td><?php echo number_format($price1); ?> VNĐ</td>
-                                            <td><a href="basket.php?xoagiohang=<?php echo $row1['id'];?>"><i class="fa fa-trash-o"></i></a>
+                                            <td>
+                                                <a href="basket.php?xoagiohang=<?php echo $row1['id'];?>"><i class="fa fa-trash-o"></i></a>
+                                                <a href="basket.php?conggiohang=<?php echo $row1['id'];?>"><i class="fa fa-trash-o"></i></a>
                                             </td>
                                         </tr>
                                         
