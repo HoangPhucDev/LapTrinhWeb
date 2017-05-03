@@ -149,34 +149,22 @@
                             <li>
                                 <div class="yamm-content">
                                     <div class="row">
-                                        <div class="col-sm-3">
-                                            <h5>Thời Trang Nam</h5>
-                                            <ul>
-                                                <li><a href="category.php">Áo Thun Nam</a>
-                                                </li>
-                                                <li><a href="category.php">Áo Sơ Mi Nam</a>
-                                                </li>
-                                                <li><a href="category.php">Quần Tây Nam</a>
-                                                </li>
-                                                <li><a href="category.php">Quần Jean Nam</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <h5>Thời Trang Nữ</h5>
-                                            <ul>
-                                                <li><a href="category.php">Áo Thun Nữ</a>
-                                                </li>
-                                                <li><a href="category.php">Áo Sơ Mi Nữ</a>
-                                                </li>
-                                                <li><a href="category.php">Quần Tây Nữ</a>
-                                                </li>
-                                                <li><a href="category.php">Quần Jean Nữ</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        
-                                        
+                                    <?php 
+                                         $sql = $data->get_list("SELECT * FROM `category`");
+                                         foreach ($sql as $row5){?>
+                                                 <div class="col-sm-3">
+                                                    <h5><?php echo $row5['name'];?></h5>
+                                                    <ul>
+                                                    <?php 
+                                                    	$sql2 = $data->get_list("SELECT * FROM `category_detail` WHERE `category_id`=".$row5['id']);
+                                                    	foreach ($sql2 as $row6){?>
+                                                    	    <li><a href="category.php?danhmuccon=<?php echo $row6['id'];?>"><?php echo $row6['name'];?></a></li>
+                                                    	<?php }
+                                                    	?>	
+                                                    </ul>
+                                                </div>
+                                            <?php }                               
+                                       ?>
                                     </div>
                                 </div>
                                 <!-- /.yamm-content -->
@@ -185,14 +173,10 @@
                     </li>
 
                     <li ><a href="contact.php">Liên Hệ</a>
-                    </li>
-
-                   
+                    </li>             
                 </ul>
-
             </div>
             <!--/.nav-collapse -->
-
             <div class="navbar-buttons">
 
                 <div class="navbar-collapse collapse right" id="basket-overview">

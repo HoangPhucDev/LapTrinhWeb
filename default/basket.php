@@ -54,17 +54,19 @@
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                <a href="detail.php?id=<?php echo $row1["id"]?>"><img src="img/<?php echo $row1['image'];?>" alt=""></a>
+                                                <a href="detail.php?id=<?php echo $row1["id"]?>">
+                                                <img src="img/<?php echo $row1['image'];?>" alt="">
+                                                </a>
                                             </td>
                                             <td><a href="detail.php?id=<?php echo $row1["id"]?>"><?php echo $row1['name'];?></a>
                                             </td>
                                             <td>
-                                                <input type="text" value="<?php echo $_SESSION['giohang'][$i]['soluong'];?>" class="form-control">
+                                                <input type="number" value="<?php echo $_SESSION['giohang'][$i]['soluong'];?>" class="form-control">
                                             </td>
                                             <td><?php echo number_format($row1['price']);?> VNĐ</td>
                                             <td style="text-align: center"><?php echo $row1['saleoff']?> %</td>
                                             <td><?php echo number_format($price1); ?> VNĐ</td>
-                                            <td><a href="#"><i class="fa fa-trash-o"></i></a>
+                                            <td><a href="basket.php?xoagiohang=<?php echo $row1['id'];?>"><i class="fa fa-trash-o"></i></a>
                                             </td>
                                         </tr>
                                         
