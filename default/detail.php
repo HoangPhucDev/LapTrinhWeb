@@ -56,7 +56,7 @@
                                 <p class="price"><?php echo number_format($result["price"]). " VNĐ";?></p>
 
                                 <p class="text-center buttons">
-                                    <a href="detail.php?themgiohang=<?php echo $result['id']?>" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng</a> 
+                                    <a href="category.php?themgiohang=<?php echo $result['id']?>" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng</a> 
                                     <a href="checkout1.php" class="btn btn-default"><i class="fa fa-heart"></i> Mua Hàng</a>
                                 </p>
 
