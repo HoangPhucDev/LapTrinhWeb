@@ -7,6 +7,7 @@
              if(isset($name)){
                    $result = $data->get_row("SELECT COUNT(*) FROM `products` WHERE `name` LIKE '%$name%' OR `price` = '$name'");
              }else {
+                 
                 $result = $data->get_row("SELECT COUNT(*) FROM `products`");
              }
             $tongsosanpham = $result['COUNT(*)'];
