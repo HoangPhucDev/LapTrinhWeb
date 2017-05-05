@@ -1,7 +1,9 @@
 
 <?php 
     require_once '../../../class/Model.php';
+    require_once '../../../class/ResizeImage.php';
     $data = new Model();
+    $ResizeImage = new ResizeImage();
     ob_start();
 ?>
 <?php
@@ -44,6 +46,7 @@
                      $size = $_FILES['HinhAnh']['size']; 
                      // Upload file
                      move_uploaded_file($tmp_name,$path.$name);
+                     $ResizeImage->resize_image('force',$path.$name,$path.$name,450,600);
                      $TenAnh = $name;
                     //tiến hành insert dữ liệu
                      $San_Pham = array('name' => ''.$TenSP,

@@ -50,6 +50,7 @@ include_once '../class/Model.php';
                                         </div>
                                     </div>
                                 </div>
+
                                 <a href="detail.php?id=<?php echo $value1["id"]?>" class="invisible">
                                     <img src="img/<?php echo $value1["image"];?>" alt="" class="img-responsive">
                                 </a>
