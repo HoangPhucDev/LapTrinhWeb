@@ -2,10 +2,7 @@
    @session_start();
    include_once '../class/Model.php';
    $data = new Model();
-    if (isset($_SESSION['error'])){
-        echo '<script>alert("'.$_SESSION['error'].'");</script>';
-        unset($_SESSION['error']);
-    }
+    
    if(isset($_GET['themgiohang'])){
        $id = $_GET['themgiohang'];
        if (isset($_SESSION['giohang']) && is_array($_SESSION['giohang'])){
@@ -76,9 +73,14 @@
                         if (isset($_SESSION['customer'])){
                             $row1 = $data->get_row("SELECT * FROM `customer` WHERE `id`=".$_SESSION['customer']);
                             $fullname = $row1['fullname'];
-                            echo '<a href="../admin">Control Panel</a>' ." | ";
-                            echo "Hello". " " .$fullname. " | " ;
-                            echo "<a href='logout.php'>Logout</a>";
+                            if($row1['username'] == 'admin' && $row1['password'] == '123456'){
+                                echo '<a href="../admin">Control Panel</a>' ." | ";
+                                echo "Hello Admin" ." | " ;
+                                echo "<a href='logout.php'>Logout</a>";
+                            }else {
+                                echo "Hello". " " .$fullname. " | " ;
+                                echo "<a href='logout.php'>Logout</a>";
+                            }
                         }else {?>
                             <a href="#" data-toggle="modal" data-target="#login-modal">Đăng Nhập</a>
                                     </li>
@@ -97,6 +99,12 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         <h4 class="modal-title" id="Login">Đăng Nhập Khách Hàng</h4>
                     </div>
+                    <?php 
+                        if (isset($_SESSION['error'])){
+                                echo '<p>"'.$_SESSION['error'].'";</p>';
+                                unset($_SESSION['error']);
+                            }
+                    ?>
                     <div class="modal-body">
                         <form action="checklogin.php" method="post">
                             <div class="form-group">
