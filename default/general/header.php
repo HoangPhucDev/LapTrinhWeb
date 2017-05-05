@@ -186,8 +186,10 @@
                      if (isset($_SESSION['giohang'])){
                         echo count($_SESSION['giohang']);
                         for($i = 0; $i < count($_SESSION['giohang']); $i++){
+                            if(isset($_SESSION['giohang'][$i])){
                             $row = $data->get_row("SELECT * FROM `products` WHERE `id`=".$_SESSION['giohang'][$i]['id']);
                             $tongtien = $tongtien + ($row['price'] * $_SESSION['giohang'][$i]['soluong']);
+                            }
                         }
                      }else{
                          echo "0";

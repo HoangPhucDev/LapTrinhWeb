@@ -709,8 +709,11 @@ h1 {
 #content #checkout .table tbody tr td input,
 #content #basket .table tbody tr td input,
 #content #customer-order .table tbody tr td input {
-  width: 50px;
-  text-align: right;
+  width: 40px;
+  text-align: center;
+}
+#content #customer-order .table-responsive tbody tr td a {
+  padding-right: 20px;
 }
 #content #checkout .table tbody tr td img,
 #content #basket .table tbody tr td img,

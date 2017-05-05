@@ -28,7 +28,7 @@ include_once '../class/Model.php';
 
     
 
-                    $query2 = $data->get_list("SELECT * FROM `products` INNER JOIN `category_detail` ON products.category = category_detail.id  WHERE `category_id` =".$value["id"]." LIMIT 0,10");
+                    $query2 = $data->get_list("SELECT products.id, products.name, products.image, products.price FROM `products` INNER JOIN `category_detail` ON products.category = category_detail.id  WHERE `category_id`=".$value["id"]." LIMIT 0,10");
 					
 					
                

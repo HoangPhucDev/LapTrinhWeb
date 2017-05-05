@@ -6,7 +6,7 @@
       if(isset($_GET['xoagiohang'])){
           $id = $_GET['xoagiohang'];
           for ($i = 0;$i < count($_SESSION['giohang']);$i++){
-              if($_SESSION['giohang'][$i]['id'] == $id){
+              if($_SESSION['giohang'][$i]['id'] == $id && $_SESSION['giohang'][$i]['soluong'] > 0){
                   $_SESSION['giohang'][$i]['soluong'] = $_SESSION['giohang'][$i]['soluong'] - 1;
               }
           }
@@ -64,11 +64,14 @@
                                             </thead>
                                 <?php 
                                 $tongtien1 = 0;
+                                
                                    if(isset($_SESSION['giohang'])){  
                                        for ($i = 0; $i < count($_SESSION['giohang']); $i++){
+                                           if(isset($_SESSION['giohang'][$i])){
                                           $row1 = $data->get_row("SELECT * FROM `products` WHERE `id`=".$_SESSION['giohang'][$i]['id']);
                                           $price1 = $row1['price'] * $_SESSION['giohang'][$i]['soluong'];
                                           $tongtien1 = $tongtien1 + ($row1['price'] * $_SESSION['giohang'][$i]['soluong']);
+                                           }
                                            
                                   ?>
                                             <tbody>
@@ -81,14 +84,18 @@
                                             <td><a href="detail.php?id=<?php echo $row1["id"]?>"><?php echo $row1['name'];?></a>
                                             </td>
                                             <td>
+                                           		<a href="basket.php?conggiohang=<?php echo $row1['id'];?>"><i class="fa fa-plus-circle"></i></a>
                                                 <input type="text" value="<?php echo $_SESSION['giohang'][$i]['soluong'];?>" class="form-control">
+                                                <a href="basket.php?xoagiohang=<?php echo $row1['id'];?>"><i class="fa fa-minus-circle"></i></a>
+                                            
                                             </td>
                                             <td><?php echo number_format($row1['price']);?> VNĐ</td>
                                             <td style="text-align: center"><?php echo $row1['saleoff']?> %</td>
                                             <td><?php echo number_format($price1); ?> VNĐ</td>
                                             <td>
-                                                <a href="basket.php?xoagiohang=<?php echo $row1['id'];?>"><i class="fa fa-trash-o"></i></a>
-                                                <a href="basket.php?conggiohang=<?php echo $row1['id'];?>"><i class="fa fa-trash-o"></i></a>
+                                                
+    
+                                                 <a href="deletecart.php?id=<?php echo $row1["id"];?>"><i class="fa fa-trash-o"></i></a>
                                             </td>
                                         </tr>
                                         
