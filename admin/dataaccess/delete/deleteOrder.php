@@ -6,7 +6,7 @@
         $id = $_GET['id'];
         $arrOrder = $data->get_row("SELECT `id`,`fullname`,`phone`,`address`,`email`,`shipping_fullname`,`shipping_address`,`shipping_phone`,`total`,`date`,`guest_id` FROM `order` WHERE `id`='$id'");
         if (isset($_POST['submit'])){
-            $delete = $data->remove('order',"`id`='$id'");
+            $delete = $data->remove('`order`',"`id`='$id'");
             if(isset($delete)){
                 header("Location: ../../dathang.php");
             }else {

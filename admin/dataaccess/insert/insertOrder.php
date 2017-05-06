@@ -15,7 +15,7 @@
           $ngaymua      = isset($_POST['ngaymua'])?$_POST['ngaymua']:'';
           $khachhang    = isset($_POST['id'])?$_POST['id']:'';
           if(is_numeric($sodienthoai) && !empty($hoten) && !empty($diachi) && !empty($email) && !empty($tongtien) && !empty($ngaymua) && is_numeric($khachhang)){
-             $insert = $data->insert('order',array('id' => ''.$id,'fullname' => ''.$hoten,'phone' => ''.$sodienthoai,'address' => ''.$diachi,'email' => ''.$email,'shipping_fullname' => ''.$nguoinhan,'shipping_address' => ''.$diachinhan,'shipping_phone' => ''.$sdtnguoinhan,'total' => ''.$tongtien,'date' => ''.$ngaymua,'guest_id' => ''.$khachhang));
+             $insert = $data->insert('`order`',array('id' => ''.$id,'fullname' => ''.$hoten,'phone' => ''.$sodienthoai,'address' => ''.$diachi,'email' => ''.$email,'shipping_fullname' => ''.$nguoinhan,'shipping_address' => ''.$diachinhan,'shipping_phone' => ''.$sdtnguoinhan,'total' => ''.$tongtien,'date' => ''.$ngaymua,'guest_id' => ''.$khachhang));
               if (isset($insert)){
                   header("Location: ../../dathang.php");
               }else {

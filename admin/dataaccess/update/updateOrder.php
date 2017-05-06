@@ -14,7 +14,7 @@
             $tongtien  = $_POST['tongtien'];
             $ngaymua   = $_POST['ngaymua'];
             $khachhang   = $_POST['khachhang'];
-            $update = $data->update('order',array('fullname' => $hoten,'phone' => $sdt,'address' => $diachi,'email' => $email,'shipping_fullname' => $nguoinhan,'shipping_address' => $diachinhan,'shipping_phone' => $sdt,'total' => $tongtien,'date' => $ngaymua,'guest_id' => $khachhang),"`id`='$id'");
+            $update = $data->update('`order`',array('fullname' => $hoten,'phone' => $sdt,'address' => $diachi,'email' => $email,'shipping_fullname' => $nguoinhan,'shipping_address' => $diachinhan,'shipping_phone' => $sdt,'total' => $tongtien,'date' => $ngaymua,'guest_id' => $khachhang),"`id`='$id'");
             if(isset($update)){
                 header("Location: ../../dathang.php");
             }else {
