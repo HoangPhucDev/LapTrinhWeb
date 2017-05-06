@@ -4,7 +4,7 @@
 ?>
 <?php
           $username    = isset($_POST['username'])?$_POST['username']:'';
-          $password    = isset($_POST['password'])?$_POST['password']:'';
+          $password    = md5(isset($_POST['password'])?$_POST['password']:'');
           $hoten       = isset($_POST['fullname'])?$_POST['fullname']:'';
           $sodienthoai = isset($_POST['sodienthoai'])?$_POST['sodienthoai']:'';
           $diachi      = isset($_POST['diachi'])?$_POST['diachi']:'';
