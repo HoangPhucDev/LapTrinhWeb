@@ -10,7 +10,7 @@
           $diachi      = isset($_POST['diachi'])?$_POST['diachi']:'';
           $email       = isset($_POST['email'])?$_POST['email']:'';
           if(!empty($username) && !empty($password) && !empty($hoten) && !empty($diachi) && !empty($email) && is_numeric($sodienthoai) ){
-             $insert = $data->insert('customer',array('username' => ''.$username,'password' => ''.$password,'fullname' =>''.$hoten,'phone' => ''.$sodienthoai,'address' => ''.$diachi,'email' => ''.$email));
+             $insert = $data->insert('customer',array('username' => ''.$username,'password' => ''.md5($password),'fullname' =>''.$hoten,'phone' => ''.$sodienthoai,'address' => ''.$diachi,'email' => ''.$email));
               if (isset($insert)){
                   header("Location: ../../user.php");
               }else {

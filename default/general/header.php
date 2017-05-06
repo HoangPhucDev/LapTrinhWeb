@@ -73,7 +73,7 @@
                         if (isset($_SESSION['customer'])){
                             $row1 = $data->get_row("SELECT * FROM `customer` WHERE `id`=".$_SESSION['customer']);
                             $fullname = $row1['fullname'];
-                            if($row1['username'] == 'admin' && $row1['password'] == '123456'){
+                            if($row1['username'] == 'admin'){
                                 echo '<a href="../admin">Control Panel</a>' ." | ";
                                 echo "Hello Admin" ." | " ;
                                 echo "<a href='logout.php'>Logout</a>";
@@ -94,14 +94,14 @@
         <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
             <div class="modal-dialog modal-sm">
 
-                <div class="modal-content">
+                <div class="modal-content" >
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         <h4 class="modal-title" id="Login">Đăng Nhập Khách Hàng</h4>
                     </div>
                     <?php 
                         if (isset($_SESSION['error'])){
-                                echo '<p>"'.$_SESSION['error'].'";</p>';
+                                echo '<p style="text-align: center;color: #d9534f;">'.$_SESSION['error'].'</p>';
                                 unset($_SESSION['error']);
                             }
                     ?>

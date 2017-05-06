@@ -10,7 +10,7 @@
           $sdt      = isset($_POST['sodienthoai'])?$_POST['sodienthoai']:'';
           $diachi   = isset($_POST['diachi'])?$_POST['diachi']:'';
           $email    = isset($_POST['email'])?$_POST['email']:'';
-          $update = $data->update('customer',array('username' => $username,'password' => $password,'fullname' => $hoten,'phone' => $sdt,'address' => $diachi,'email' => $email),"`id`= '$id'");
+          $update = $data->update('customer',array('username' => $username,'password' => md5($password),'fullname' => $hoten,'phone' => $sdt,'address' => $diachi,'email' => $email),"`id`= '$id'");
           if(isset($update)){
               header("Location: ../../user.php");
           }else {

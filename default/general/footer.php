@@ -21,10 +21,9 @@
                     <div class="col-md-4">
                         <h4>Thông tin</h4>
                         <ul>
-                            <li><a href="#">Giới thiệu về 3PH</a></li>
-                            <li><a href="#">Tuyển dụng</a></li>
-                            <li><a href="#">3PH's Blog</a></li>
-                            <li><a target="_blank" href="#">Gửi góp ý/Than phiền</a></li>
+                            <li><a href="contact.php">Giới thiệu về 3PH</a></li>
+                            <li><a href="contact.php">Tuyển dụng</a></li>
+                            <li><a target="_blank" href="contact.php">Gửi góp ý/Than phiền</a></li>
                         </ul>
                     </div>
                     <div class="col-md-4">

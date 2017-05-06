@@ -1,4 +1,5 @@
 <?php 
+include_once 'CheckSession.php';
 			if(isset($_GET['page'])){
 				$page = $_GET['page'];
 				if($page=='danhmuclon'){
@@ -17,6 +18,6 @@
                     include_once 'user.php';
                 }
 			}else{
-					include_once 'danhmuclon.php';
+					include_once 'danhsachsp.php';
 			}
 ?>

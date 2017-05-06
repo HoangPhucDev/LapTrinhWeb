@@ -3,32 +3,52 @@
     <div id="all">
         <div id="content">
             <div class="container">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="box">
-                        <h1>New account</h1>
+                        <h1>Tạo Tài Khoản Mới</h1>
 
-                        <p class="lead">Not our registered customer yet?</p>
-                        <p>With registration with us new world of fashion, fantastic discounts and much more opens to you! The whole process will not take you more than a minute!</p>
-                        <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>, our customer service center is working for you 24/7.</p>
+                        <p class="lead">Bạn chưa có tài khoản ?</p>
+                        <p>Hãy tạo một tài khoản để có thể nhận được nhiều ưu đãi và cập nhật những thông tin về sản phẩm mới nhất từ chúng tôi ! </p>
 
                         <hr>
 
                         <form action="customer.php" method="post">
-                            <div class="form-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" class="form-control" id="fullname" name="fullname">
+                        <div class="row">
+                        <div class="alert alert-warning" role="alert">(*) Là bắt buộc</div>
+                            <div class="col-md-6"> 
+                                <div class="form-group">
+                                    <label for="name">Họ và Tên <i style="color: #d9534f">*</i></label>
+                                    <input type="text" class="form-control" id="fullname" name="fullname">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Tài Khoản <i style="color: #d9534f">*</i></label>
+                                    <input type="text" class="form-control" id="username" name="username">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Mật Khẩu <i style="color: #d9534f">*</i></label>
+                                    <input type="password" class="form-control" id="password" name="password">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="email">Username</label>
-                                <input type="text" class="form-control" id="username" name="username">
+
+                            <div class="col-md-6">
+                                  <div class="form-group">
+                                    <label for="phone">Số Điện Thoại</label>
+                                    <input type="phone" class="form-control" id="phone" name="phone">
+                                </div>   
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Địa Chỉ</label>
+                                    <textarea class="form-control" id="address" name="address"></textarea>
+                                </div>                              
                             </div>
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password" name="password">
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button>
-                            </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-user-md"></i> Đăng Ký</button>
+                        </div> 
+
+                        </div>   
                         </form>
                     </div>
                 </div>

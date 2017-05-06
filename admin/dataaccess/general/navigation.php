@@ -1,4 +1,4 @@
-
+<?php include_once 'CheckSession.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
