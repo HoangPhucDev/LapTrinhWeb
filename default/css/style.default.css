@@ -709,6 +709,7 @@ h1 {
 #content #checkout .table tbody tr td input,
 #content #basket .table tbody tr td input,
 #content #customer-order .table tbody tr td input {
+  display: inline-block;
   width: 40px;
   text-align: center;
 }

@@ -13,6 +13,7 @@
        	
        	$customer_id=isset($_SESSION['customer'])?$_SESSION['customer']:0;
         
+        
      
 		//thêm khách hàng mới vào csdl
 		 $max_guest_id = $data->get_row("SELECT max(`id`) as `id` FROM `guest`");	  
@@ -56,6 +57,7 @@
 	function insert_order($_order_id,$_fullname,$_phone,$_address,$_email,$_shipping_fullname,$_shipping_address,$_shipping_phone,$_total,$_guest_id)
 		{
 			GLOBAL $data;
+			$date = date("d/m/Y h:i:s a");
 			$NewOrder = array('id' => $_order_id, 
 				'fullname' => ''.$_fullname, 
 				'phone' => ''.$_phone, 
@@ -64,7 +66,8 @@
 				'shipping_fullname' => ''.$_shipping_fullname, 
 				'shipping_address' => ''.$_shipping_address, 
 				'shipping_phone' =>''.$_shipping_phone , 
-				'total' => ''.$_total, 
+				'total' => ''.$_total,
+				'date' => ''.$date,
 				'guest_id' => ''.$_guest_id);
 		$query_insert_order = $data->insert('`order`',$NewOrder);
 		
@@ -75,6 +78,7 @@
 	function inser_cart_detail($_order_id)
 		{
 			GLOBAL $data;
+
 			for($i = 0; $i < count($_SESSION['giohang']);$i++){
 				   $product_id = $_SESSION['giohang'][$i]['id'];
 				   $row = $data->get_row("SELECT `price` FROM `products` WHERE `id`=".$product_id);
