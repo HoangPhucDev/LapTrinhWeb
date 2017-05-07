@@ -102,20 +102,40 @@
                             </li>
                                 <?php 
                                      for($i = 1; $i<= $tongsotrang; $i++){
-                                        if(isset($_GET['tukhoa'])){
-                                          echo   "<li><a href=\"?tukhoa=".$_GET['tukhoa']."&trang=$i\">$i</a>
-                                                </li>";     
-                                         }else{
-                                            if (isset($_GET['danhmuccon'])){
-                                               echo   "<li><a href=\"?danhmuccon=".$_GET['danhmuccon']."&trang=$i\">$i</a>
-                                                </li>";
-                                            }else
-                                            {
-                                               echo   "<li><a href=\"?trang=$i\">$i</a>
-                                                </li>";
+                                        if($i==$page)
+                                        {
+                                            if(isset($_GET['tukhoa'])){
+                                              echo   "<li><a style=\"color:#ffffff;background-color: #4fbfa8\" href=\"?tukhoa=".$_GET['tukhoa']."&trang=$i\">$i</a>
+                                                    </li>";     
+                                             }else
+                                             {
+                                                if (isset($_GET['danhmuccon'])){
+                                                   echo   "<li><a style=\"color:#ffffff;background-color: #4fbfa8\" href=\"?danhmuccon=".$_GET['danhmuccon']."&trang=$i\">$i</a>
+                                                    </li>";
+                                                }else
+                                                {
+                                                   echo   "<li><a style=\"color:#ffffff;background-color: #4fbfa8\" href=\"?trang=$i\">$i</a>
+                                                    </li>";
+                                                }
                                             }
-                                        }
-                                         
+
+                                        }else
+                                        {
+                                            if(isset($_GET['tukhoa'])){
+                                              echo   "<li><a href=\"?tukhoa=".$_GET['tukhoa']."&trang=$i\">$i</a>
+                                                    </li>";     
+                                             }else
+                                             {
+                                                if (isset($_GET['danhmuccon'])){
+                                                   echo   "<li><a href=\"?danhmuccon=".$_GET['danhmuccon']."&trang=$i\">$i</a>
+                                                    </li>";
+                                                }else
+                                                {
+                                                   echo   "<li><a href=\"?trang=$i\">$i</a>
+                                                    </li>";
+                                                }
+                                            }
+                                         }
                                        }
                                  ?>
                             <li><a href=<?php if(isset($_GET['tukhoa'])){

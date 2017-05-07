@@ -3,8 +3,8 @@
    $data = new Model();
    $id = isset($_GET["id"])?$_GET["id"]:'';
    $result = $data->get_row("SELECT * FROM `products` WHERE `id`= ".$id);
-   $result_danhmuc = $data->get_row("SELECT category FROM `products` WHERE id=".$id);
-   $result_cungloai = $data->get_list("SELECT * FROM `products` WHERE `category`=".$result_danhmuc['category']." LIMIT 0,3");
+   $result_danhmuc = $result['category'];
+   $result_cungloai = $data->get_list("SELECT * FROM `products` WHERE `category`=".$result_danhmuc." LIMIT 0,3");
 ?>
 <?php include_once 'general/header.php';?>
 
@@ -15,9 +15,9 @@
 
                 <div class="col-md-12">
                     <ul class="breadcrumb">
-                        <li><a href="#">Trang Chủ</a>
+                        <li><a href="./">Trang Chủ</a>
                         </li>
-                        <li><a href="#">Áo Thun</a>
+                        <li><a href=category.php?danhmuccon=<?php echo $result_danhmuc;?> >Áo Thun</a>
                         </li>
                         <li><?php echo $result['name'];?></li>
                     </ul>

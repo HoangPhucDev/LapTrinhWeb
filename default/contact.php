@@ -6,7 +6,7 @@
 
                 <div class="col-md-12">
                     <ul class="breadcrumb">
-                        <li><a href="#">Trang Chủ</a>
+                        <li><a href="./">Trang Chủ</a>
                         </li>
                         <li>Liên Hệ</li>
                     </ul>
