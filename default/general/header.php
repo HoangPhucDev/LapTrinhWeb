@@ -217,7 +217,7 @@
 
             <div class="collapse clearfix" id="search">
 
-                <form class="navbar-form" role="search" method="get">
+                <form class="navbar-form" role="search" method="get" action="category.php">
                     <div class="input-group">
                         <input type="text" name="tukhoa" class="form-control" placeholder="Search">
                         <span class="input-group-btn">
