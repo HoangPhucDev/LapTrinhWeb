@@ -4,12 +4,18 @@
             $data = new Model();
             $size = 6;
             $name = isset($_GET['tukhoa'])?$_GET['tukhoa']:'';
-             if(isset($name)){
+            $page = isset($_GET['trang'])?$_GET['trang']:1;
+            $danhmuccon = isset($_GET['danhmuccon'])?$_GET['danhmuccon']:'';
+
+             if(isset($_GET['tukhoa'])){
                    $result = $data->get_row("SELECT COUNT(*) FROM `products` WHERE `name` LIKE '%$name%' OR `price` = '$name'");
-             }else {
-                 
-                $result = $data->get_row("SELECT COUNT(*) FROM `products`");
-             }
+             }else{
+                if (isset($_GET['danhmuccon'])) {
+                    $result = $data->get_row("SELECT COUNT(*) FROM `products` WHERE `category`=".$danhmuccon);
+                }else{
+                    $result = $data->get_row("SELECT COUNT(*) FROM `products`");
+                    }
+                }
             $tongsosanpham = $result['COUNT(*)'];
             $tongsotrang = ceil($tongsosanpham / $size);
 ?>
@@ -80,15 +86,51 @@
                     <div class="pages">
                         <ul class="pagination">   
                         
-                            <li><a href="#">&laquo;</a>
+                            <li><a href=<?php if(isset($_GET['tukhoa'])){
+                                          echo $page>1?'?tukhoa='.$_GET['tukhoa'].'&trang='.($page-1):
+                                                        '?tukhoa='.$_GET['tukhoa'];     
+                                         }else{
+                                            if (isset($_GET['danhmuccon'])){
+                                               echo $page>1?'?danhmuccon='.$_GET['danhmuccon'].'&trang='.($page-1):
+                                                            '?danhmuccon='.$_GET['danhmuccon'];
+                                            }else
+                                            {
+                                               echo $page>1?'?trang='.($page-1):'';
+                                            }
+                                        } 
+                                        ?> >&laquo;</a>
                             </li>
                                 <?php 
                                      for($i = 1; $i<= $tongsotrang; $i++){
-                                         echo   "<li><a href=\"?trang=$i\">$i</a>
+                                        if(isset($_GET['tukhoa'])){
+                                          echo   "<li><a href=\"?tukhoa=".$_GET['tukhoa']."&trang=$i\">$i</a>
+                                                </li>";     
+                                         }else{
+                                            if (isset($_GET['danhmuccon'])){
+                                               echo   "<li><a href=\"?danhmuccon=".$_GET['danhmuccon']."&trang=$i\">$i</a>
                                                 </li>";
+                                            }else
+                                            {
+                                               echo   "<li><a href=\"?trang=$i\">$i</a>
+                                                </li>";
+                                            }
+                                        }
+                                         
                                        }
                                  ?>
-                            <li><a href="#">&raquo;</a>
+                            <li><a href=<?php if(isset($_GET['tukhoa'])){
+                                          echo $page<$tongsotrang?'?tukhoa='.$_GET['tukhoa'].'&trang='.($page+1):
+                                                        '?tukhoa='.$_GET['tukhoa'].'&trang='.($page);     
+                                         }else{
+                                            if (isset($_GET['danhmuccon'])){
+                                               echo $page<$tongsotrang?'?danhmuccon='.$_GET['danhmuccon'].'&trang='.($page+1):
+                                                            '?danhmuccon='.$_GET['danhmuccon'].'&trang='.($page);
+                                            }else
+                                            {
+                                               echo $page<$tongsotrang?'?trang='.($page+1):'';
+                                            }
+                                        } 
+                                        ?> >&raquo;</a>
                             </li>
                         </ul>
                     </div>

@@ -84,9 +84,12 @@
                                             <td><a href="detail.php?id=<?php echo $row1["id"]?>"><?php echo $row1['name'];?></a>
                                             </td>
                                             <td>
-                                           		<a href="basket.php?conggiohang=<?php echo $row1['id'];?>"><i class="fa fa-plus-circle"></i></a>
+                                           		
+
+                                              <a href="basket.php?xoagiohang=<?php echo $row1['id'];?>"><i class="fa fa-minus-circle"></i></a>
                                                 <input type="text" value="<?php echo $_SESSION['giohang'][$i]['soluong'];?>" class="form-control">
-                                                <a href="basket.php?xoagiohang=<?php echo $row1['id'];?>"><i class="fa fa-minus-circle"></i></a>
+                                                <a href="basket.php?conggiohang=<?php echo $row1['id'];?>"><i class="fa fa-plus-circle"></i></a>
+                                                
                                             
                                             </td>
                                             <td><?php echo number_format($row1['price']);?> VNĐ</td>
