@@ -1,4 +1,18 @@
 <?php include_once 'general/header.php';
+    $loi = isset($_GET['loi'])?$_GET['loi']:0;
+    $thongbaoloi='class="alert alert-warning">'.'(*) Là bắt buộc';
+
+    switch ($loi) {
+        case 1:
+            $thongbaoloi='class="alert alert-danger">'.'Đăng Ký Lổi! Vui lòng xác nhận lại thông tin';
+            break;
+        case 2:
+            $thongbaoloi='class="alert alert-danger">'.'Tài Khoảng Đã Được Đăng Ký';
+            break;
+        default:
+            # code...
+            break;
+    }
 ?>
     <div id="all">
         <div id="content">
@@ -14,7 +28,7 @@
 
                         <form action="customer.php" method="post">
                         <div class="row">
-                        <div class="alert alert-warning" role="alert">(*) Là bắt buộc</div>
+                        <div role="alert" <?php echo $thongbaoloi; ?></div>
                             <div class="col-md-6"> 
                                 <div class="form-group">
                                     <label for="name">Họ và Tên <i style="color: #d9534f">*</i></label>

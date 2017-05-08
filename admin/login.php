@@ -1,3 +1,14 @@
+<?php 
+    @session_start();
+    if (isset($_SESSION['customer'])) {
+        unset($_SESSION['customer']);
+    }
+
+    $thongbaoloi=(isset($_SESSION['error'])?'<div role="alert" class="alert alert-danger">'.$_SESSION['error'].'</div>':'');
+    unset($_SESSION['error']);
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,8 +46,11 @@
                         <h3 class="panel-title">Đăng Nhập</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" action="../default/checklogin.php" method="POST">
+                        <form role="form" action="checklogin.php" method="POST">
                             <fieldset>
+                                <div class="form-group">
+                                  <?php echo $thongbaoloi; ?>
+                                </div>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Tài Khoản" name="username" type="text" autofocus>
                                 </div>
